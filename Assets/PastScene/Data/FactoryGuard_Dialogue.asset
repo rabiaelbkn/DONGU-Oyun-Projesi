@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fae17bcde24afe48adeace2cff04b41, type: 3}
+  m_Name: FactoryGuard_Dialogue
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  speakerName: "Emirhan-fabrika g\xF6revlsii"
+  startRules:
+  - requireFlag: guvenlik_gecildi
+    nodeId: emirhan_tamamlandi
+  - requireFlag: emirhan_suphelendi
+    nodeId: tekrar_start
+  nodes:
+  - id: start
+    speaker: Emirhan
+    text: "Hey! Sen kimsin? Fabrikan\u0131n at\u0131k borusunun yan\u0131nda ne i\u015Fin var?"
+    setFlag: 
+    toast: 
+    next: 
+    choices:
+    - text: "Yolumu kaybettim, nehre bak\u0131yordum"
+      next: izin
+      requireFlag: 
+      hideIfFlag: 
+      setFlag: 
+    - text: "Bu borudan nehre ne ak\u0131yor?"
+      next: suphe
+      requireFlag: 
+      hideIfFlag: 
+      setFlag: 
+  - id: suphe
+    speaker: Emirhan
+    text: "Bu seni ilgilendirmez! Fabrikay\u0131 \u015Fik\xE2yet edip kapatt\u0131rmaya m\u0131 \xE7al\u0131\u015F\u0131yorsun? Buradan uzakla\u015F!"
+    setFlag: emirhan_suphelendi
+    toast: 
+    next: 
+    choices: []
+  - id: izin
+    speaker: Emirhan
+    text: "Pek\xE2l\xE2, ama fazla oyalanma. Bu fabrika sayesinde ekmek yiyoruz. Kapan\u0131rsa hepimiz i\u015Fsiz kal\u0131r\u0131z."
+    setFlag: guvenlik_gecildi
+    toast: 
+    next: 
+    choices: []
+  - id: tekrar_start
+    speaker: Emirhan
+    text: Yine sen mi? Sana burada oyalanma demedim mi?
+    setFlag: 
+    toast: 
+    next: 
+    choices:
+    - text: "Kusura bakma, biraz fazla merakl\u0131 davrand\u0131m. Sadece yolumu bulmaya \xE7al\u0131\u015F\u0131yordum."
+      next: tekrar_ikna
+      requireFlag: 
+      hideIfFlag: 
+      setFlag: 
+    - text: "Buralarda pek kimse yok. Fabrikada \xE7al\u0131\u015Fmak zor olmal\u0131"
+      next: is_konusmasi
+      requireFlag: 
+      hideIfFlag: 
+      setFlag: 
+    - text: "Hakl\u0131s\u0131n, seni rahats\u0131z etmeyeyim. \u0130yi \xE7al\u0131\u015Fmalar"
+      next: yoluna_devam
+      requireFlag: 
+      hideIfFlag: 
+      setFlag: 
+  - id: tekrar_ikna
+    speaker: Emirhan
+    text: "Hah, \xF6yle desene. Kusura bakma, biraz sert \xE7\u0131kt\u0131m. Ben \u015Fu taraftaki i\u015Flere bakay\u0131m."
+    setFlag: guvenlik_gecildi
+    toast: 
+    next: 
+    choices: []
+  - id: is_konusmasi
+    speaker: Emirhan
+    text: "Zor tabii. Sabah ak\u015Fam \xE7al\u0131\u015F\u0131yoruz. Ama fabrika kapan\u0131rsa hepimiz i\u015Fsiz kal\u0131r\u0131z. \u0130nsan ister istemez tedirgin oluyor."
+    setFlag: 
+    toast: 
+    next: 
+    choices:
+    - text: "Hakl\u0131s\u0131n, insan ge\xE7imini d\xFC\u015F\xFCnmek zorunda. Seni daha fazla oyalamayay\u0131m."
+      next: empati_ikna
+      requireFlag: 
+      hideIfFlag: 
+      setFlag: 
+    - text: "Peki, burada \xE7al\u0131\u015F\u0131rken hi\xE7 garip bir \u015Feyle kar\u015F\u0131la\u015Fm\u0131yor musunuz?"
+      next: tekrar_suphe
+      requireFlag: 
+      hideIfFlag: 
+      setFlag: 
+  - id: yoluna_devam
+    speaker: Emirhan
+    text: "\u0130yi g\xFCnler. Hadi, yoluna devam et"
+    setFlag: 
+    toast: 
+    next: 
+    choices: []
+  - id: tekrar_suphe
+    speaker: Emirhan
+    text: "Yine soru sormaya ba\u015Flad\u0131n! Bence art\u0131k gitmelisin."
+    setFlag: 
+    toast: 
+    next: 
+    choices: []
+  - id: empati_ikna
+    speaker: Emirhan
+    text: "Anlay\u0131\u015F\u0131n i\xE7in sa\u011F ol. Ben de i\u015Fimin ba\u015F\u0131na d\xF6neyim."
+    setFlag: guvenlik_gecildi
+    toast: 
+    next: 
+    choices: []
+  - id: emirhan_tamamlandi
+    speaker: Emirhan
+    text: "Sen h\xE2l\xE2 burada m\u0131s\u0131n? Ben i\u015Fime d\xF6neyim, sana da kolay gelsin."
+    setFlag: 
+    toast: 
+    next: 
+    choices: []

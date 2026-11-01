@@ -1,0 +1,27 @@
+{
+    "name": "Dongu.VideoKayit",
+    "rootNamespace": "",
+    "references": [
+        "Unity.Recorder",
+        "Unity.Recorder.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "DONGU_RECORDER"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.unity.recorder",
+            "expression": "4.0.0",
+            "define": "DONGU_RECORDER"
+        }
+    ],
+    "noEngineReferences": false
+}
